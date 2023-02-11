@@ -3,10 +3,11 @@ package frc.robot.commands
 import edu.wpi.first.wpilibj2.command.CommandBase
 import frc.robot.subsystems.DriveSubsystem
 
-class TankDriveCommand (subsystem:DriveSubsystem, left:Double, right:Double): CommandBase() {
-    val driveSubsystem:DriveSubsystem = subsystem
-    val left:Double = left
-    val right:Double = right
+class TankDriveCommand (subsystem: DriveSubsystem, left: Double, right: Double): CommandBase() {
+    val driveSubsystem: DriveSubsystem = subsystem
+    val left: Double = left
+    val right: Double = right
+
     init {
         // Use addRequirements() here to declare subsystem dependencies.
         addRequirements(driveSubsystem)

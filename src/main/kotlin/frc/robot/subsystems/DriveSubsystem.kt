@@ -9,20 +9,20 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType
 import frc.robot.Constants
 
 
-class DriveSubsystem : SubsystemBase() {
+class DriveSubsystem: SubsystemBase() {
     //Controllers
-    public val driveLeftFront:PWMSparkMax = PWMSparkMax(Constants.driveConstants.driveLeftFrontID)
-    public val driveLeftBack:PWMSparkMax = PWMSparkMax(Constants.driveConstants.driveLeftBackID)
-    public val driveRightFront:PWMSparkMax = PWMSparkMax(Constants.driveConstants.driveRightFrontID)
-    public val driveRightBack:PWMSparkMax = PWMSparkMax(Constants.driveConstants.driveRightBackID)
+    public val driveLeftFront:  PWMSparkMax = PWMSparkMax(Constants.driveConstants.driveLeftFrontID)
+    public val driveLeftBack:   PWMSparkMax = PWMSparkMax(Constants.driveConstants.driveLeftBackID)
+    public val driveRightFront: PWMSparkMax = PWMSparkMax(Constants.driveConstants.driveRightFrontID)
+    public val driveRightBack:  PWMSparkMax = PWMSparkMax(Constants.driveConstants.driveRightBackID)
     //Groups
-    public val driveLeft:MotorControllerGroup = MotorControllerGroup(driveLeftFront, driveLeftBack)
-    public val driveRight:MotorControllerGroup = MotorControllerGroup(driveRightBack, driveRightBack)
+    public val driveLeft: MotorControllerGroup = MotorControllerGroup(driveLeftFront, driveLeftBack)
+    public val driveRight: MotorControllerGroup = MotorControllerGroup(driveRightBack, driveRightBack)
     //Drive
-    public val drive:DifferentialDrive = DifferentialDrive(driveLeft, driveRight)
+    public val drive: DifferentialDrive = DifferentialDrive(driveLeft, driveRight)
     
     init{
-        //inversion
+        // Inversion
         driveLeft.setInverted(true)
     }
 

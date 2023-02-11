@@ -11,7 +11,7 @@ import frc.robot.commands.ArcadeDriveCommand
  * the package after creating this project, you must also update the build.gradle file in the
  * project.
  */
-class Robot : TimedRobot() {
+class Robot: TimedRobot() {
     private var autonomousCommand: Command? = null
     private var teleopCommand : Command? = null
     private var robotContainer: RobotContainer? = null
@@ -24,7 +24,6 @@ class Robot : TimedRobot() {
         // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
         // autonomous chooser on the dashboard.
         robotContainer = RobotContainer()
-
     }
 
     /**
@@ -81,7 +80,9 @@ class Robot : TimedRobot() {
     /** This function is called once when test mode is enabled.  */
     override fun testInit() {
         // Cancels all running commands at the start of test mode.
-        CommandScheduler.getInstance().cancelAll()
+        CommandScheduler
+            .getInstance()
+            .cancelAll()
     }
 
     /** This function is called periodically during test mode.  */

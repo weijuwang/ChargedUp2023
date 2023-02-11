@@ -5,9 +5,10 @@ import edu.wpi.first.wpilibj.Joystick
 import frc.robot.subsystems.DriveSubsystem
 import frc.robot.IO
 
-class JoystickArcadeDrive (subsystem: DriveSubsystem, stick:IO): CommandBase() {
-    val driveSubsystem:DriveSubsystem = subsystem
-    val joystick:Joystick = stick.joystick
+class JoystickArcadeDrive(subsystem: DriveSubsystem, stick:IO): CommandBase() {
+    val driveSubsystem: DriveSubsystem = subsystem
+    val joystick: Joystick = stick.joystick
+
     init {
         // Use addRequirements() here to declare subsystem dependencies.
         addRequirements(driveSubsystem)

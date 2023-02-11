@@ -5,15 +5,15 @@ import edu.wpi.first.wpilibj.Joystick
 import frc.robot.subsystems.DriveSubsystem
 
 /** An example command that uses an example subsystem.  */
-class ArcadeDriveCommand(subsystem: DriveSubsystem, x: Double, y:Double) : CommandBase() {
-    val speed:Double = y
-    val rotation:Double = x 
+class ArcadeDriveCommand(subsystem: DriveSubsystem, x: Double, y: Double): CommandBase() {
+    val speed: Double = y
+    val rotation: Double = x
+
     val driveSubsystem:DriveSubsystem = subsystem
     init {
         // Use addRequirements() here to declare subsystem dependencies.
         addRequirements(driveSubsystem)
     }
-    
 
     /** Called when the command is initially scheduled.  */
     override fun initialize() {

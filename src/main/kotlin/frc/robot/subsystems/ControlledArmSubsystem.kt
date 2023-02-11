@@ -7,10 +7,10 @@ import com.revrobotics.RelativeEncoder
 import com.revrobotics.SparkMaxPIDController
 import frc.robot.Constants.Arm
 
-class ControlledArmSubsystem(ArmConsts: Arm) : SubsystemBase() {
-    val motor:CANSparkMax = CANSparkMax(ArmConsts.motorPort, MotorType.kBrushless)
-    val encoder:RelativeEncoder = motor.getEncoder()
-    val pidcontroller:SparkMaxPIDController = motor.getPIDController()
+class ControlledArmSubsystem(ArmConsts: Arm): SubsystemBase() {
+    val motor: CANSparkMax = CANSparkMax(ArmConsts.motorPort, MotorType.kBrushless)
+    val encoder: RelativeEncoder = motor.getEncoder()
+    val pidcontroller: SparkMaxPIDController = motor.getPIDController()
 
     init{
         pidcontroller.setP(ArmConsts.kp)
@@ -35,9 +35,14 @@ class ControlledArmSubsystem(ArmConsts: Arm) : SubsystemBase() {
     }
 
     fun moveToGoal(goalPos: Double){
-        //sets position to a given amount of radians, hopefully it works
-        val current:Double = encoder.getPosition()*(2*Math.PI)
-        val toMove:Double = (if (current > goalPos)    (Math.abs(current - goalPos) / (2*Math.PI) ) else (current - goalPos / (2*Math.PI)))
+        //sets position to a given amount of radians; hopefully it works
+        val current: Double = encoder.getPosition() * (2*Math.PI)
+        val toMove: Double = (
+            if (current > goalPos)
+                ( Math.abs(current - goalPos) / (2*Math.PI) )
+            else
+                ( current - goalPos / (2*Math.PI) )
+        )
         pidcontroller.setReference(toMove, CANSparkMax.ControlType.kPosition)
     }
 

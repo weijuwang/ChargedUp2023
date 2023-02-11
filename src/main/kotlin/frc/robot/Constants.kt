@@ -14,6 +14,7 @@ class Constants {
         const val JoystickPort = 0
         const val FirstButton = 1
     }
+
     object driveConstants {
         const val driveLeftFrontID = 0
         const val driveLeftBackID = 1
@@ -22,16 +23,16 @@ class Constants {
     }
 
     data class Arm (
-        var motorPort:Int,
-        var kp:Double,
-        var ki:Double,
-        var kd:Double,
-        var kiz:Double,
-        var kff:Double,
-        var kmaxoutput:Double,
-        var kminoutput:Double,
+        var motorPort: Int,
+        var kp:         Double,
+        var ki:         Double,
+        var kd:         Double,
+        var kiz:        Double,
+        var kff:        Double,
+        var kmaxoutput: Double,
+        var kminoutput: Double,
     )
 
-    val firstArm:Arm = Arm(1, 5.0,3.0,1.0,0.0,0.0,1.0,-1.0)
-    val secondArm:Arm = Arm(2, 5.0,3.0,1.0,0.0,0.0,1.0,-1.0)
+    val firstArm = Arm(1, 5.0,3.0,1.0,0.0,0.0,1.0,-1.0)
+    val secondArm = Arm(2, 5.0,3.0,1.0,0.0,0.0,1.0,-1.0)
 }
