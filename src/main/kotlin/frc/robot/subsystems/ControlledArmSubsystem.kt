@@ -12,7 +12,7 @@ class ControlledArmSubsystem(ArmConsts: Arm): SubsystemBase() {
     val encoder: RelativeEncoder = motor.getEncoder()
     val pidcontroller: SparkMaxPIDController = motor.getPIDController()
 
-    init{
+    init {
         pidcontroller.setP(ArmConsts.kp)
         pidcontroller.setI(ArmConsts.ki)
         pidcontroller.setD(ArmConsts.kd)
