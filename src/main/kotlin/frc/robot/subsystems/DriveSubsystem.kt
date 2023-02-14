@@ -8,20 +8,19 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive
 import com.revrobotics.CANSparkMaxLowLevel.MotorType
 import frc.robot.Constants
 
-
 class DriveSubsystem: SubsystemBase() {
-    //Controllers
+    // Controllers
     public val driveLeftFront:  PWMSparkMax = PWMSparkMax(Constants.driveConstants.driveLeftFrontID)
     public val driveLeftBack:   PWMSparkMax = PWMSparkMax(Constants.driveConstants.driveLeftBackID)
     public val driveRightFront: PWMSparkMax = PWMSparkMax(Constants.driveConstants.driveRightFrontID)
     public val driveRightBack:  PWMSparkMax = PWMSparkMax(Constants.driveConstants.driveRightBackID)
-    //Groups
+    // Groups
     public val driveLeft: MotorControllerGroup = MotorControllerGroup(driveLeftFront, driveLeftBack)
     public val driveRight: MotorControllerGroup = MotorControllerGroup(driveRightBack, driveRightBack)
-    //Drive
+    // Drive
     public val drive: DifferentialDrive = DifferentialDrive(driveLeft, driveRight)
     
-    init{
+    init {
         // Inversion
         driveLeft.setInverted(true)
     }
